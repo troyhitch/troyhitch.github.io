@@ -4,7 +4,7 @@
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, user-scalable=no' />
 	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
-	<title>Development</title>
+	<title>KFC | A Better Chance At Chicken</title>
 	<style type='text/css'>
 
 		body {
@@ -13,7 +13,11 @@
 			border: 0 none;
 			padding: 0;
 			text-align: center;
-			background-color: black;
+			background-color: #db0000;
+			background-image: url(splash.png);
+  		background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-position: center;
 		}
 
 		#canvas {
@@ -55,10 +59,10 @@
 		#status-progress {
 			width: 366px;
 			height: 7px;
-			background-color: #38363A;
-			border: 1px solid #444246;
+			background-color: #FFFFFF;
+			border: 1px solid #FFFFFF;
 			padding: 1px;
-			box-shadow: 0 0 2px 1px #1B1C22;
+			box-shadow: 0 0 2px 1px #FFFFFF;
 			border-radius: 2px;
 			visibility: visible;
 		}
@@ -90,7 +94,7 @@
 			height: 0;
 			border-style: solid;
 			border-width: 9px 3px 0 3px;
-			border-color: #2b2b2b transparent transparent transparent;
+			border-color: #FFFFFF transparent transparent transparent;
 			transform-origin: center 21px;
 			position: absolute;
 		}
@@ -211,7 +215,7 @@
 					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
 						child.style.borderTopColor = '';
 					});
-					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+					statusIndeterminate.children[i].style.borderTopColor = '#ffffff';
 				}
 			}
 
@@ -254,7 +258,7 @@
 			if (!Engine.isWebGLAvailable()) {
 				displayFailureNotice('WebGL not available');
 			} else {
-				setStatusMode('indeterminate');
+				setStatusMode('progress');
 				engine.setCanvas(canvas);
 				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
 					setStatusMode('hidden');
@@ -265,4 +269,3 @@
 	//]]></script>
 </body>
 </html>
-
